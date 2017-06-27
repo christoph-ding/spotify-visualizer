@@ -1,0 +1,19 @@
+{
+  "name": "spotify-visualizer",
+  "version": "1.0.0",
+  "description": "A website that captures information from the spotify api and visualizes statistics.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ironpup/spotify-visualizer.git"
+  },
+  "author": "Chris Ding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ironpup/spotify-visualizer/issues"
+  },
+  "homepage": "https://github.com/ironpup/spotify-visualizer#readme"
+}
