@@ -4,7 +4,8 @@
   "description": "A website that captures information from the spotify api and visualizes statistics.",
   "main": "src/server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ironpup/spotify-visualizer/issues"
   },
-  "homepage": "https://github.com/ironpup/spotify-visualizer#readme"
+  "homepage": "https://github.com/ironpup/spotify-visualizer#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
