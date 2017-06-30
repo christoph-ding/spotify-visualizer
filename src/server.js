@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const port = 8000
 
+// serve main page
 app.use(express.static('public'))
-
 
 // start the server
 var playStartUpMessage = function() {
