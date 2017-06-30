@@ -2,9 +2,13 @@ const express = require('express')
 const app = express()
 const port = 8000
 
-app.get('/', function(req, res) {
-  res.send('hello world');
-})
+app.use(express.static('public'))
 
-app.listen(port);
-console.log('listening on port ', port)
+
+// start the server
+var playStartUpMessage = function() {
+  var message = 'listening on port ' + port
+  console.log(message)
+}
+
+app.listen(port, playStartUpMessage)
