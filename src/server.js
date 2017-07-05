@@ -5,6 +5,9 @@ const port = 8000
 // serve main page
 app.use(express.static('public'))
 
+// pass to middleware
+require("./middleware.js")(app)
+
 // start the server
 var playStartUpMessage = function() {
   var message = 'listening on port ' + port
