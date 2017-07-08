@@ -1,11 +1,12 @@
+
 module.exports = function(app) {
   console.log('inside middleware...')
   
-  var testLog = function(req, res) {
-    console.log('test log')
-    res.send()
-  }
+  require('./services/logging.js')(app)
 
-  app.get('/test', testLog)
+  app.use(function(req, res) {
+    console.log('here')
+    res.send()
+  })  
 
 }
