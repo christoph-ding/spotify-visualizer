@@ -1,9 +1,9 @@
-var express = require('express')
-var friendsRouter = express.Router()
-var friendsController = require('./friends-controller')
+var router = require('express').Router()
+var c = require('./friends-controller')
 
-friendsRouter.get('/', friendsController.listFriends)
-friendsRouter.get('/:id', friendsController.listSpecificFriend)
-friendsRouter.post('/:id', friendsController.sendMessage)
+// endpoints
+router.get('/', c.listFriends)
+router.get('/:id', c.listSpecificFriend)
+router.post('/:id', c.sendMessage)
 
-module.exports = friendsRouter
+module.exports = router
