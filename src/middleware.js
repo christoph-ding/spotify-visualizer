@@ -7,27 +7,19 @@ module.exports = function(app) {
   app.use(bodyParser.json())
 
   // mount my own middleware 
-  require('./services/logging.js')(app)
+  require('./services/logging')(app)
+
+  // mount routers
+  require('./router.js')(app)
 
   // the endpoints are here for now,
   // will make into routers
 
+
+
+
   // friend related
-  app.get('/friends', function(req, res, next) {
-    console.log('GETTING friends')
-    next()
-  })
-
-  app.get('/friends/:id', function(req, rex, next) {
-    console.log('GETTING friend: ', req.params.id)
-    next()
-  })
-
-  app.post('/friends/:id/', function(req, rex, next) {
-    console.log('POSTING to friend: ', req.params.id)
-    console.log('with msg: ', req.body)
-    next()
-  })
+  
 
   // user related
   app.get('/user', function(req, res, next) {
