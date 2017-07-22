@@ -3,6 +3,10 @@ var bodyParser = require('body-parser')
 module.exports = function(app) {
   console.log('inside middleware...')
   
+  // mount app on general node dependencies
+  app.use(bodyParser.json())
+
+  // mount my own middleware 
   require('./services/logging.js')(app)
 
   // the endpoints are here for now,
