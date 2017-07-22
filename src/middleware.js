@@ -12,15 +12,6 @@ module.exports = function(app) {
   // mount routers
   require('./router.js')(app)
 
-  // the endpoints are here for now,
-  // will make into routers
-
-
-
-
-  // friend related
-  
-
   // user related
   app.get('/user', function(req, res, next) {
     console.log('GETTING user')
