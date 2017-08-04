@@ -6,8 +6,14 @@ function testAuth(req, res, next) {
   console.log(credentials)
 
   // make a get request with our credentials
+  var url = 'http://www.google.com'
 
-  next()
+  function test(err, res, body) {
+    console.log(res.statusCode)
+    next()
+  }
+
+  request(url, test)
 }
 
 
