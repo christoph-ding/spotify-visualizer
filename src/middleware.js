@@ -8,7 +8,9 @@ module.exports = function(app) {
 
   // mount my own middleware 
   require('./services/logging')(app)
-  require('./services/auth.js')
+  var auth = require('./services/auth.js')
+
+  app.get('/auth', auth.testAuth)
 
   // mount routers
   require('./router.js')(app)
