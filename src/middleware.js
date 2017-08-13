@@ -8,9 +8,6 @@ module.exports = function(app) {
 
   // mount my own middleware 
   require('./services/logging')(app)
-  var auth = require('./services/auth.js')
-
-  app.get('/auth', auth.testAuth)
 
   // mount routers
   require('./router.js')(app)
@@ -18,5 +15,5 @@ module.exports = function(app) {
   app.use(function(req, res) {
     console.log('final function before sending response')
     res.send()
-  })  
+  })
 }

@@ -1,7 +1,6 @@
 var credentials = require('./user_creds.js')
 var request = require('request')
 
-
 function testAuth(req, res, next) {
   console.log('authing ... ')
   console.log(credentials)
@@ -14,16 +13,10 @@ function testAuth(req, res, next) {
   var redirect_uri = 'https://www.google.com'
   var authenticationURL = spotifyAuthRoot + '?client_id=' + clientID + '&response_type=code' + '&redirect_uri=' + redirect_uri
 
-  function test(err, res, body) {
-    console.log(res.statusCode)
-    next()
-  }
-
   console.log(authenticationURL)
 
-  request(authenticationURL, test)
+  request(authenticationURL, next)
 }
-
 
 module.exports.testAuth = testAuth
 
