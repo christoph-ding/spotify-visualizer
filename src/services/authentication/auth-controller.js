@@ -1,9 +1,18 @@
 var credentials = require('./user_creds.js')
 var request = require('request')
+var path = require('path')
+var express = require('express')
 
-module.exports.testAuth = function(res, req, next) {
+module.exports.testAuth = function(req, res, next) {
   console.log('sending the login page')
   next()
+}
+
+module.exports.login = function(req, res, next) {
+  var filePath = path.resolve(__dirname + '/../../../public/login-landing.html')
+  console.log(filePath)
+  res.sendFile(filePath)
+  // next()
 }
 
 // function testAuth(req, res, next) {
