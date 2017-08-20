@@ -11,11 +11,15 @@ module.exports.login = function(req, res, next) {
 
   var spotifyAuthRoot = 'https://accounts.spotify.com/authorize'
   var redirect_uri = 'https://www.google.com'
-  var authenticationURL = spotifyAuthRoot + '?client_id=' + clientID + '&response_type=code' + '&redirect_uri=' + redirect_uri + '&response_type=token'
+  var authenticationURL = spotifyAuthRoot + '?client_id=' + clientID + '&redirect_uri=' + encodeURIComponent(redirect_uri) + '&response_type=code'
 
   console.log(authenticationURL)
 
-  request(authenticationURL, next)
+  request(authenticationURL, function(req2, res2) {
+    console.log('in request cb ... ')
+    console.log(arguments.length)
+    next()
+  })
 }
 
 module.exports.loginLanding = function(req, res, next) {
