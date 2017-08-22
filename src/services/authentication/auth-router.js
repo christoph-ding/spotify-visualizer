@@ -3,6 +3,6 @@ var c = require('./auth-controller')
 
 // endpoints
 router.get('/', c.login)
-router.get('/landing', c.login)
+// router.get('/landing', c.login)
 
 module.exports = router

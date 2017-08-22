@@ -15,11 +15,16 @@ module.exports.login = function(req, res, next) {
 
   console.log(authenticationURL)
 
-  request(authenticationURL, function(req2, res2) {
-    console.log('in request cb ... ')
-    console.log(arguments.length)
-    next()
-  })
+  var scope = 'user-read-private user-read-email';
+  res.redirect('https://accounts.spotify.com/authorize?' +
+    // querystring.stringify({
+    //   response_type: 'code',
+    //   client_id: client_id,
+    //   scope: scope,
+    //   redirect_uri: redirect_uri,
+    //   state: state
+    // }));
+  )
 }
 
 module.exports.loginLanding = function(req, res, next) {
